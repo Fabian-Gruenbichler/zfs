@@ -1,14 +1,16 @@
-Description: Enable zed emails
- The OpenZFS event daemon monitors pools.  This patch enables the email
- sending function by default (if zed is installed).  This is consistent with
- the default behavior of mdadm.
-Author: Richard Laager <rlaager@wiktel.com>
-Forwarded: no
+From: Debian ZFS on Linux maintainers
+ <pkg-zfsonlinux-devel@lists.alioth.debian.org>
+Date: Mon, 7 Aug 2017 16:19:06 +0200
+Subject: enable-zed
 
-Index: zfs-linux-0.6.5.3/cmd/zed/zed.d/zed.rc
-===================================================================
---- zfs-linux-0.6.5.3.orig/cmd/zed/zed.d/zed.rc	2015-10-27 15:22:37.000000000 -0500
-+++ zfs-linux-0.6.5.3/cmd/zed/zed.d/zed.rc	2016-01-31 23:13:49.826489152 -0600
+---
+ cmd/zed/zed.d/zed.rc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/cmd/zed/zed.d/zed.rc b/cmd/zed/zed.d/zed.rc
+index a1dd337..be0a8c1 100644
+--- a/cmd/zed/zed.d/zed.rc
++++ b/cmd/zed/zed.d/zed.rc
 @@ -15,7 +15,7 @@
  # Email will only be sent if ZED_EMAIL_ADDR is defined.
  # Disabled by default; uncomment to enable.

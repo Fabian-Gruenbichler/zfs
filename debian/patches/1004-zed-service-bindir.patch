@@ -1,12 +1,14 @@
-Description: Fix the path to the zed binary on the systemd unit.
- We install zed into /usr/sbin manually meanwhile the upstream default
- is installing it into /sbin.
- Ubuntu packages also install zed to /usr/sbin, but they ship their own
- zfs-zed unit.
-Author: Carlos Alberto Lopez <clopez@igalia.com>
-Author: Fabian Grünbichler <f.gruenbichler@proxmox.com>
-Bug-Debian: https://bugs.debian.org/849813
-Forwarded: no
+From: Debian ZFS on Linux maintainers
+ <pkg-zfsonlinux-devel@lists.alioth.debian.org>
+Date: Mon, 7 Aug 2017 16:19:06 +0200
+Subject: zed-service-bindir
+
+---
+ etc/systemd/system/zfs-zed.service.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/etc/systemd/system/zfs-zed.service.in b/etc/systemd/system/zfs-zed.service.in
+index e3dec3d..0b85f16 100644
 --- a/etc/systemd/system/zfs-zed.service.in
 +++ b/etc/systemd/system/zfs-zed.service.in
 @@ -5,7 +5,7 @@ After=zfs-import-cache.service

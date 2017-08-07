@@ -1,8 +1,19 @@
-Index: zfs-linux-0.6.5.3/lib/libzfs/Makefile.am
+From: Debian ZFS on Linux maintainers
+ <pkg-zfsonlinux-devel@lists.alioth.debian.org>
+Date: Mon, 7 Aug 2017 16:19:06 +0200
+Subject: Add-libuutil-to-LIBADD-for-libzfs-and-libzfs_core
+
 ===================================================================
---- zfs-linux-0.6.5.3.orig/lib/libzfs/Makefile.am	2015-10-27 14:34:47.344602154 -0600
-+++ zfs-linux-0.6.5.3/lib/libzfs/Makefile.am	2015-10-27 14:35:15.236602845 -0600
-@@ -32,6 +32,7 @@
+---
+ lib/libzfs/Makefile.am      | 1 +
+ lib/libzfs_core/Makefile.am | 3 ++-
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/lib/libzfs/Makefile.am b/lib/libzfs/Makefile.am
+index f1260ea..5b07b9d 100644
+--- a/lib/libzfs/Makefile.am
++++ b/lib/libzfs/Makefile.am
+@@ -31,6 +31,7 @@ nodist_libzfs_la_SOURCES = \
  
  libzfs_la_LIBADD = \
  	$(top_builddir)/lib/libzfs_core/libzfs_core.la \
@@ -10,11 +21,11 @@ Index: zfs-linux-0.6.5.3/lib/libzfs/Makefile.am
  	$(top_builddir)/lib/libshare/libshare.la \
  	$(top_builddir)/lib/libnvpair/libnvpair.la \
  	$(top_builddir)/lib/libzpool/libzpool.la
-Index: zfs-linux-0.6.5.3/lib/libzfs_core/Makefile.am
-===================================================================
---- zfs-linux-0.6.5.3.orig/lib/libzfs_core/Makefile.am	2015-10-27 14:34:47.344602154 -0600
-+++ zfs-linux-0.6.5.3/lib/libzfs_core/Makefile.am	2015-10-27 14:35:15.236602845 -0600
-@@ -16,7 +16,8 @@
+diff --git a/lib/libzfs_core/Makefile.am b/lib/libzfs_core/Makefile.am
+index 5eafc25..10d6de3 100644
+--- a/lib/libzfs_core/Makefile.am
++++ b/lib/libzfs_core/Makefile.am
+@@ -16,7 +16,8 @@ nodist_libzfs_core_la_SOURCES = \
  	$(KERNEL_C)
  
  libzfs_core_la_LIBADD = \

@@ -1,16 +1,20 @@
-Description: Block manual building in the DKMS source tree.
-  To avoid messing up future DKMS builds and the zfs installation,
-  block manual building of the DKMS source tree.
-Author: unknown
-Origin: ubuntu
-Forwarded: no
-Reviewed-By: Petter Reinholdtsen <pere@hungry.com>
-Last-Update: 2016-05-12
+From: Debian ZFS on Linux maintainers
+ <pkg-zfsonlinux-devel@lists.alioth.debian.org>
+Date: Mon, 7 Aug 2017 16:19:06 +0200
+Subject: Prevent-manual-builds-in-the-DKMS-source
 
-Index: zfs-linux-0.6.5.6/config/dkms.m4
-===================================================================
+---
+ config/dkms.m4      | 14 ++++++++++++++
+ config/user.m4      |  1 +
+ config/zfs-build.m4 |  4 ++--
+ 3 files changed, 17 insertions(+), 2 deletions(-)
+ create mode 100644 config/dkms.m4
+
+diff --git a/config/dkms.m4 b/config/dkms.m4
+new file mode 100644
+index 0000000..cfa1152
 --- /dev/null
-+++ zfs-linux-0.6.5.6/config/dkms.m4
++++ b/config/dkms.m4
 @@ -0,0 +1,14 @@
 +dnl #
 +dnl # Prevent manual building in DKMS source tree.
@@ -26,10 +30,10 @@ Index: zfs-linux-0.6.5.6/config/dkms.m4
 +		AC_MSG_RESULT([not found])
 +        ])
 +])
-Index: zfs-linux-0.6.5.6/config/user.m4
-===================================================================
---- zfs-linux-0.6.5.6.orig/config/user.m4
-+++ zfs-linux-0.6.5.6/config/user.m4
+diff --git a/config/user.m4 b/config/user.m4
+index 21ff714..2b033f5 100644
+--- a/config/user.m4
++++ b/config/user.m4
 @@ -2,6 +2,7 @@ dnl #
  dnl # Default ZFS user configuration
  dnl #
@@ -38,17 +42,18 @@ Index: zfs-linux-0.6.5.6/config/user.m4
  	ZFS_AC_CONFIG_USER_MOUNT_HELPER
  	ZFS_AC_CONFIG_USER_UDEV
  	ZFS_AC_CONFIG_USER_SYSTEMD
-Index: zfs-linux-0.6.5.6/config/zfs-build.m4
-===================================================================
---- zfs-linux-0.6.5.6.orig/config/zfs-build.m4
-+++ zfs-linux-0.6.5.6/config/zfs-build.m4
-@@ -87,8 +87,8 @@ AC_DEFUN([ZFS_AC_CONFIG], [
- 	ZFS_AC_CONFIG_ALWAYS
-
+diff --git a/config/zfs-build.m4 b/config/zfs-build.m4
+index 7651dc2..3a9a820 100644
+--- a/config/zfs-build.m4
++++ b/config/zfs-build.m4
+@@ -65,8 +65,8 @@ AC_DEFUN([ZFS_AC_CONFIG], [
  	case "$ZFS_CONFIG" in
--		kernel) ZFS_AC_CONFIG_KERNEL ;;
+ 		kernel) ZFS_AC_CONFIG_KERNEL ;;
  		user)	ZFS_AC_CONFIG_USER   ;;
-+		kernel) ZFS_AC_CONFIG_KERNEL ;;
- 		all)    ZFS_AC_CONFIG_KERNEL
- 			ZFS_AC_CONFIG_USER   ;;
+-		all)    ZFS_AC_CONFIG_USER
+-			ZFS_AC_CONFIG_KERNEL ;;
++		all)    ZFS_AC_CONFIG_KERNEL
++			ZFS_AC_CONFIG_USER   ;;
  		srpm)                        ;;
+ 		*)
+ 		AC_MSG_RESULT([Error!])
