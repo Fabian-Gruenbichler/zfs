@@ -1,3 +1,16 @@
+zfs-linux (0.7.0-1) unstable; urgency=medium
+
+  [ Fabian Grünbichler ]
+  * update to upstream version 0.7.0
+  * rebase and drop applied patches
+  * fix man page generation
+  * dkms: build icp module as well
+  * add zfs-test binary package
+  * dh_install: switch to --fail-missing
+  * add files to debian/not-installed
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 4 Sep 2017 10:24:37 +0200
+
 zfs-linux (0.6.5.11-1) unstable; urgency=medium
 
   [ Aron Xu ]
