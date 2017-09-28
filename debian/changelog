@@ -1,13 +1,14 @@
-zfs-linux (0.7.1-1~1.gbp35c872) UNRELEASED; urgency=medium
+zfs-linux (0.7.2-0) unstable; urgency=medium
 
   [ Fabian Grünbichler ]
-  * update to upstream version 0.7.1
+  * update to upstream version 0.7.2
   * drop manpage patch (applied upstream)
   * cherry-pick small fixes for lintian checks
   * zfs-test: add python dependency
   * add man page reference to systemd units
+  * update changelog
 
- -- Proxmox Support Team <support@proxmox.com>  Wed, 6 Sep 2017 10:09:33 +0200
+ -- Fabian Grünbichler <f.gruenbichler@proxmox.com>  Fri, 29 Sep 2017 09:55:11 +0200
 
 zfs-linux (0.7.0-1) unstable; urgency=medium
 
