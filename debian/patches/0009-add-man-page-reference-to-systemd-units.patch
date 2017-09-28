@@ -36,7 +36,7 @@ index 625f3a9..9254fd3 100644
  Requires=systemd-udev-settle.service
  After=systemd-udev-settle.service
 diff --git a/etc/systemd/system/zfs-mount.service.in b/etc/systemd/system/zfs-mount.service.in
-index 36dc3be..d3c912e 100644
+index 0664fd9..3da7158 100644
 --- a/etc/systemd/system/zfs-mount.service.in
 +++ b/etc/systemd/system/zfs-mount.service.in
 @@ -1,5 +1,6 @@
